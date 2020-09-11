@@ -1,0 +1,36 @@
+{
+    "name": "cli-starter",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "node dist/index.js",
+        "build.tsc": "tsc",
+        "build.bundle": "rollup -c",
+        "minify": "terser --compress --mangle --toplevel --output dist/index.js -- dist/index.js",
+        "build": "npm run build.tsc && npm run build.bundle && npm run minify",
+        "build.dev": "npm run build.tsc && npm run build.bundle",
+        "dev": "npm run build.dev && npm start",
+        "version": "npm build"
+    },
+    "files": [
+        "dist/index.js"
+    ],
+    "bin": {
+        "cli-starter": "dist/index.js"
+    },
+    "devDependencies": {
+        "@types/inquirer": "^7.3.1",
+        "prettier": "^2.1.1",
+        "rollup": "^2.3.3",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-json": "^4.0.0",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "terser": "^4.6.10",
+        "tslint": "^6.1.1",
+        "tslint-ionic-rules": "0.0.21",
+        "typescript": "^3.8.3"
+    },
+    "dependencies": {
+        "inquirer": "^7.3.3"
+    }
+}
